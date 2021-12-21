@@ -7,8 +7,10 @@
 #
 # Examples
 #
-#   multiplex('Tom', 4)
-#   # => 'TomTomTomTom'
+# person_object1 = Person.new(name: "John", age: 20, parent_permission: true)
+# person_object2 = Person.new(20, "John", true)
+# peron_object3 = Person.new(20, "John")
+# peron_object4 = Person.new(20)
 #
 # Returns the duplicated String.
 class Person
