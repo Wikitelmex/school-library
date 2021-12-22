@@ -5,17 +5,18 @@
 # and not longer than 10 characters
 #
 # Example:
-#  person = Corrector.new(20,"alex castillo")
-#  person.name
-#  => "Alex Castillo"
+#
+# person_object1 = Person.new(name: "john", age: 20, parent_permission: true)
+# corrector_object1 = Corrector.new(person_object1)
+# person_object1.name # => "John"
 #
 # Date: Dec, 22 2021
 
 require './person'
 
-class Corrector < Person
-  def initialize(age, name: 'unknown', parent_permission: true)
-    super(age, correct_name(name), parent_permission)
+class Corrector
+  def initialize(person: Person)
+    person.name = correct_name(person.name)
   end
 
   private
