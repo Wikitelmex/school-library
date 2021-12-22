@@ -11,16 +11,7 @@
 # person_object1.name # => "John"
 #
 # Date: Dec, 22 2021
-
-require './person'
-
 class Corrector
-  def initialize(person: Person)
-    person.name = correct_name(person.name)
-  end
-
-  private
-
   def correct_name(name)
     name = name.capitalize
     name.length > 10 ? name[0..9] : name
