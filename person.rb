@@ -14,10 +14,11 @@
 #
 # Returns the duplicated String.
 require './corrector'
+require './classroom'
 
 class Person
   attr_reader :id
-  attr_accessor :name, :age
+  attr_accessor :name, :age, :rentals
 
   def initialize(age, name: 'Unknown', parent_permission: true)
     @id = Random.rand(1..999_999)
@@ -25,6 +26,7 @@ class Person
     @parent_permission = parent_permission
     @corrector_object1 = Corrector.new
     @name = @corrector_object1.correct_name(name)
+    @rentals = []
   end
 
   def can_use_services?
