@@ -57,7 +57,7 @@ def read_all_rentals(people)
   return if person.nil?
 
   person.rentals.each do |rental|
-    puts "Book title: #{rental.book.title}, Author: #{rental.book.author}, Date: #{rental.date}" 
+    puts "Book title: #{rental.book.title}, Author: #{rental.book.author}, Date: #{rental.date}"
   end
   print 'Press enter to continue...'
   gets.chomp
