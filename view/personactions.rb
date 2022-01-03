@@ -1,7 +1,7 @@
-require './person'
-require './actions'
-require './student'
-require './teacher'
+require_relative './actions'
+require_relative '../model/person'
+require_relative '../model/student'
+require_relative '../model/teacher'
 
 class PersonActions
   include Actions

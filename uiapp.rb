@@ -1,6 +1,6 @@
-require './rentalactions'
-require './personactions'
-require './bookactions'
+require './view/rentalactions'
+require './view/personactions'
+require './view/bookactions'
 
 class UiApp
   def initialize(books, people)

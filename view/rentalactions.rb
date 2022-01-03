@@ -1,7 +1,7 @@
-require './actions'
-require './rental'
-require './book'
-require './person'
+require_relative './actions'
+require_relative '../model/rental'
+require_relative '../model/book'
+require_relative '../model/person'
 
 class RentalActions
   include Actions

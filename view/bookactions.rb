@@ -1,5 +1,5 @@
-require './actions'
-require './book'
+require_relative './actions'
+require_relative '../model/book'
 
 class BookActions
   include Actions
