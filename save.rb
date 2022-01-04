@@ -54,8 +54,7 @@ class SaveData
   end
 
   def json_teacher(array, people)
-    people << { id: array[:object].id,
-                age: array[:object].age,
+    people << { id: array[:object].id, age: array[:object].age,
                 name: array[:object].name,
                 specialization: array[:object].specialization }
   end
