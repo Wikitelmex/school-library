@@ -1,21 +1,14 @@
-require_relative './actions'
+require_relative '../model/book'
 require_relative '../model/person'
 require_relative '../model/student'
 require_relative '../model/teacher'
 
-class PersonActions
-  include Actions
-
-  def initialize(people)
-    @people = people
+class PersonView
+  def self.list_people(person)
+    puts "Person name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
   end
 
-  def read_all
-    @people.each { |person| puts "Person name: #{person.name}, ID: #{person.id}, Age: #{person.age}" }
-    wait
-  end
-
-  def create
+  def self.new_person
     puts 'Enter the info of the person you want to add:'
     print 'Name:'
     name = gets.chomp
@@ -31,8 +24,6 @@ class PersonActions
       puts 'Which specialization is this teacher?'
       person = Teacher.new(age, gets.chomp, name)
     end
-
-    @people << person
-    puts @people.include?(person) ? 'Person added!' : 'Person not added!'
+    person
   end
 end
