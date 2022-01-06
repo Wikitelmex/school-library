@@ -41,7 +41,7 @@ class Person
     {
       'id' => @id,
       'age' => @age,
-      'name' => @name,
+      'name' => @name
     }
   end
 
