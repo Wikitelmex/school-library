@@ -13,8 +13,8 @@
 # peron_object4 = Person.new(20)
 #
 # Returns the duplicated String.
-require './corrector'
-require './classroom'
+require_relative '../common/corrector'
+require_relative './classroom'
 
 class Person
   attr_reader :id
