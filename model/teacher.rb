@@ -19,7 +19,7 @@ class Teacher < Person
       'id' => @id,
       'age' => @age,
       'name' => @name,
-      'specialization' => @specialization
+      'specialization' => @specialization,
     }
   end
 end

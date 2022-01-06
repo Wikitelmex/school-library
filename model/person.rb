@@ -42,7 +42,6 @@ class Person
       'id' => @id,
       'age' => @age,
       'name' => @name,
-      'rentals' => @rentals
     }
   end
 

@@ -24,7 +24,7 @@ class Student < Person
       'age' => @age,
       'name' => @name,
       'parent_permission' => @parent_permission,
-      'classroom' => @classroom
+      'classroom' => @classroom,
     }
   end
 end

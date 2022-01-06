@@ -1,8 +1,9 @@
 require 'pry'
 class Book
-  attr_accessor :title, :author, :rentals
+  attr_accessor :title, :author, :rentals, :id
 
-  def initialize(title, author)
+  def initialize(title, author, id = nil)
+    @id = id || Random.rand(1..999_999)
     @title = title
     @author = author
     @rentals = []
@@ -14,6 +15,7 @@ class Book
 
   def to_s
     %{(
+      Id: #{id}
       Title: #{title},
       Author: #{author}
     )}
@@ -21,6 +23,7 @@ class Book
 
   def to_json(_options = {})
     {
+      'id' => @id,
       'title' => @title,
       'author' => @author
     }
@@ -30,7 +33,7 @@ class Book
     return unless my_array
 
     my_array.map do |obj|
-      args[0].new(obj['title'], obj['author'])
+      args[0].new(obj['title'], obj['author'], obj['id'])
     end
     # binding.pry
   end

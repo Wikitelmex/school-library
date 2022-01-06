@@ -10,8 +10,9 @@ def main
   people_entity = SchoolLibraryEntity.new('people.json')
   books = books_entity.load(Book)
   people = people_entity.load(Person, Student, Teacher)
+  rentals = []
   # binding.pry
-  ui_app = UiApp.new(books, people)
+  ui_app = UiApp.new(books, people, rentals)
 
   loop do
     system 'clear'

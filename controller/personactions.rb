@@ -17,8 +17,6 @@ class PersonActions
   def create
     person = PersonView.new_person
     @people << person
-    people = @people
-    binding.pry
     puts @people.include?(person) ? 'Person added!' : 'Person not added!'
   end
 end

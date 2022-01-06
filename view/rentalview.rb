@@ -1,6 +1,7 @@
 require_relative '../model/rental'
 require_relative '../model/book'
 require_relative '../model/person'
+require 'pry'
 
 class RentalView
   def self.list_rentals(person_id, people)
@@ -20,8 +21,9 @@ class RentalView
 
     print 'Enter the ID of the book you want to add a rental to:'
     book_id = gets.chomp.to_i
-    return if books[book_id].nil?
+    book = books.find { |p| p.id == book_id }
+    return if book.nil?
 
-    { time: Time.now, book: books[book_id], pep: person }
+    { time: Time.now, book: book, pep: person }
   end
 end
