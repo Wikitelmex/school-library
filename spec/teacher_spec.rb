@@ -1,4 +1,4 @@
-require_relative '../teacher'
+require_relative '../model/teacher'
 
 describe Teacher do
   before :each do
