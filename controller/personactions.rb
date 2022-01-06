@@ -1,5 +1,6 @@
 require_relative './actions'
 require_relative '../view/personview'
+require 'pry'
 
 class PersonActions
   include Actions

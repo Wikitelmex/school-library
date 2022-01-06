@@ -5,7 +5,7 @@ require_relative '../model/teacher'
 
 class PersonView
   def self.list_people(person)
-    puts "Person name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+    puts "ID: #{person.id}, Person name: #{person.name}, Age: #{person.age}"
   end
 
   def self.new_person

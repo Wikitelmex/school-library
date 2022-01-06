@@ -3,8 +3,8 @@ require './controller/personactions'
 require './controller/bookactions'
 
 class UiApp
-  def initialize(books, people)
-    @rentals = RentalActions.new(books, people)
+  def initialize(books, people, rentals)
+    @rentals = RentalActions.new(books, people, rentals)
     @people = PersonActions.new(people)
     @books = BookActions.new(books)
   end
