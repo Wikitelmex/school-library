@@ -20,8 +20,8 @@ class Person
   attr_reader :id
   attr_accessor :name, :age, :rentals
 
-  def initialize(age, name = 'Unknown', parent_permission: true)
-    @id = Random.rand(1..999_999)
+  def initialize(age, name = 'Unknown', id = nil, parent_permission: true)
+    @id = id || Random.rand(1..999_999)
     @age = age
     @parent_permission = parent_permission
     @corrector_object1 = Corrector.new
@@ -31,6 +31,32 @@ class Person
 
   def can_use_services?
     @parent_permission || of_age?
+  end
+
+  def to_s
+    "Name: #{@name}, Age: #{@age}, ID: #{@id}"
+  end
+
+  def to_json(_options = {})
+    {
+      'id' => @id,
+      'age' => @age,
+      'name' => @name,
+      'rentals' => @rentals
+    }
+  end
+
+  def self.to_array(my_array, *args)
+    return unless my_array
+
+    my_array.map do |obj|
+      if obj.key?('specialization')
+        args[2].new(obj['age'], obj['specialization'], obj['name'], obj['id'])
+      else
+        args[1].new(obj['age'], obj['name'], obj['id'], parent_permission: obj['parent_permission'])
+      end
+    end
+    # binding.pry
   end
 
   private

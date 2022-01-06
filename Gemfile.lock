@@ -20,6 +20,7 @@ GEM
     rubocop-ast (1.15.0)
       parser (>= 3.0.1.1)
     ruby-progressbar (1.11.0)
+    simple_attribute_mapper (0.0.3)
     unicode-display_width (2.1.0)
 
 PLATFORMS
@@ -27,6 +28,7 @@ PLATFORMS
 
 DEPENDENCIES
   rubocop (>= 1.0, < 2.0)
+  simple_attribute_mapper
 
 BUNDLED WITH
    2.2.32
