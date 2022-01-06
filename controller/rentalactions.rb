@@ -28,7 +28,5 @@ class RentalActions
     return if rent.nil?
 
     @rentals << Rental.new(rent[:time], rent[:book], rent[:pep])
-    r = @rentals
-    binding.pry
   end
 end

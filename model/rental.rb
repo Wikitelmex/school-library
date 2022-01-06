@@ -17,8 +17,19 @@ class Rental
   def to_json(_options = {})
     {
       'date' => @date,
-      'book' => @book.to_json,
-      'person' => @person.to_json
+      'book_id' => @book.id,
+      'person_id' => @person.id
     }
+  end
+
+  def self.to_array(my_array, *args)
+    return unless my_array
+
+    my_array.map do |obj|
+      book = args[1].find { |p| p.id == obj['book_id'] }
+      person = args[2].find { |p| p.id == obj['person_id'] }
+      args[0].new(obj['date'], book, person)
+    end
+    # binding.pry
   end
 end

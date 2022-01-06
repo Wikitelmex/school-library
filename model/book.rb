@@ -1,6 +1,7 @@
 require 'pry'
 class Book
-  attr_accessor :title, :author, :rentals, :id
+  attr_reader :id
+  attr_accessor :title, :author, :rentals
 
   def initialize(title, author, id = nil)
     @id = id || Random.rand(1..999_999)
@@ -35,6 +36,5 @@ class Book
     my_array.map do |obj|
       args[0].new(obj['title'], obj['author'], obj['id'])
     end
-    # binding.pry
   end
 end
