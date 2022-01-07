@@ -20,4 +20,8 @@ describe Person do
   it 'matches the class' do
     expect(@student.setclassroom('room1')).to match 'room1'
   end
+
+  it 'matches play_hooky' do
+    expect(@student.play_hooky).to match '¯\(ツ)/¯'
+  end
 end

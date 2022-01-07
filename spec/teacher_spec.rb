@@ -20,4 +20,8 @@ describe Teacher do
   it 'matches the age' do
     expect(@teacher.age).to match 23
   end
+
+  it 'mathces can_use_services methode' do
+    expect(@teacher.can_use_services?).to match true
+  end
 end
